@@ -3,4 +3,5 @@ command line references: <br>
 1- https://wiki.mikrotik.com/wiki/Manual:Console <br>
 2- https://wiki.mikrotik.com/wiki/Manual:Interface/Lora#Channels <br>
 3- https://help.mikrotik.com/docs/display/ROS/General+Properties <br>
+4- https://help.mikrotik.com/docs/display/ROS/Environment <br>
 

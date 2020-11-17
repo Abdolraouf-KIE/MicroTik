@@ -4,4 +4,4 @@ command line references: <br>
 2- https://wiki.mikrotik.com/wiki/Manual:Interface/Lora#Channels <br>
 3- https://help.mikrotik.com/docs/display/ROS/General+Properties <br>
 4- https://help.mikrotik.com/docs/display/ROS/Environment <br>
-
+5- https://wiki.mikrotik.com/wiki/Manual:System/SSH_client <br>

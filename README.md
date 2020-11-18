@@ -58,8 +58,19 @@ To set the configuration for LR please connect to the device and log in with you
 2. Double-click or tap on the line to configure.
 3. Choose the previously entered network on the drop-down menu.
 4. Click on the button Enable to enable the gateway.
-5. Select the frequency band (since Malaysia uses AS1 and there is no option for this we must manually set this using the console. refere to "Advance Band Configuration"
+5. Select the frequency band #since Malaysia uses AS1 and there is no option for this we must manually set this using the console. refere to "Advance Frequency Plan Configuration"
 6. Click OK to save.
 7. The configuration is done.
 
-# Advance Band Configuration (for AS1 2020)
+# Advance Frequency Plan Configuration (for AS1 2020)
+This section refers to https://help.mikrotik.com/docs/display/ROS/General+Properties. For guidlines on how to use commands refer to https://wiki.mikrotik.com/wiki/Manual:Console. <br>
+
+Before sending out commands we must setup ssh to the router and send command using PC termianl instead of web based terminal <br>
+### setting up ssh with MicroTik
+1. Connect to the Microtik wifi
+2. go to the router IP using browser-192.168.88.1 
+3. click on WebFig tab located at top right of webpage.
+4. go to "System" and then "Users" found in the tab menue to the right
+5. Here you can add new user and set it's password.
+6. After setting up a user you can ssh as that user from the PC connected to Microtik wifi. for example i use the command below for user "loranet":<br>
+<code> ssh loranet@192.168.88.1 </code>

@@ -1,7 +1,6 @@
 # MicroTik
-![MicroTik Lora Kit](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-
-![MicroTik Lora Module](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+<img src="https://github.com/Abdolraouf-KIE/MicroTik/blob/main/imgs/kit.png" alt="MicroTik Lora Kit" width="300" height="300">
+<img src="https://github.com/Abdolraouf-KIE/MicroTik/blob/main/imgs/loramodule.jpg" alt="MicroTik Lora Module" width="300" height="300">
 
 ## Quickstart 
 The quick setup below is according to https://help.mikrotik.com/docs/display/UM/wAP+LR9+kit. Additional notes will be added after '#'. <br> <br>

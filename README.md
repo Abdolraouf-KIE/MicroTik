@@ -1,23 +1,10 @@
 # MicroTik
-### command line references: <br>
-1. https://wiki.mikrotik.com/wiki/Manual:Console <br>
-2. https://wiki.mikrotik.com/wiki/Manual:Interface/Lora#Channels <br>
-3. https://help.mikrotik.com/docs/display/ROS/General+Properties <br>
-4. https://help.mikrotik.com/docs/display/ROS/Environment <br>
-5. https://wiki.mikrotik.com/wiki/Manual:System/SSH_client <br>
-6. https://wiki.mikrotik.com/wiki/Manual:IP/SSH <br>
-7. https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/ <br>
-
-### Setup instructions: <br>
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-Lora module manule: https://mikrotik.com/product/r11e_lr9 <br>
-
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-wAP LR9 kit: https://mikrotik.com/product/wap_lr9_kit#fndtn-downloads <br>
-
 
 # Quickstart 
 The quick setup below is according to https://help.mikrotik.com/docs/display/UM/wAP+LR9+kit. Additional notes will be added after '#'. <br> <br>
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 1. Make sure your ISP is allowing hardware change and will issue an automatic IP address. #This is to allow the router to be connected to internet. forget this for now, further information will be given at step 12
 2. Open the bottom lid. 
@@ -74,3 +61,18 @@ Before sending out commands we must setup ssh to the router and send command usi
 5. Here you can add new user and set it's password.
 6. After setting up a user you can ssh as that user from the PC connected to Microtik wifi. for example i use the command below for user "loranet":<br>
 <code> ssh loranet@192.168.88.1 </code>
+
+# References 
+### command line references: <br>
+1. https://wiki.mikrotik.com/wiki/Manual:Console <br>
+2. https://wiki.mikrotik.com/wiki/Manual:Interface/Lora#Channels <br>
+3. https://help.mikrotik.com/docs/display/ROS/General+Properties <br>
+4. https://help.mikrotik.com/docs/display/ROS/Environment <br>
+5. https://wiki.mikrotik.com/wiki/Manual:System/SSH_client <br>
+6. https://wiki.mikrotik.com/wiki/Manual:IP/SSH <br>
+7. https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/ <br>
+
+### Setup instructions references: <br>
+Lora module manule: https://mikrotik.com/product/r11e_lr9 <br>
+wAP LR9 kit: https://mikrotik.com/product/wap_lr9_kit#fndtn-downloads <br>
+

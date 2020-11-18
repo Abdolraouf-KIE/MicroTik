@@ -1,7 +1,3 @@
-code {
-  display: block;
-  white-space: pre-wrap   
-}
 # MicroTik
 ![MicroTik Lora Kit](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 

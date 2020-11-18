@@ -53,14 +53,54 @@ To set the configuration for LR please connect to the device and log in with you
 This section refers to https://help.mikrotik.com/docs/display/ROS/General+Properties. For guidlines on how to use commands refer to https://wiki.mikrotik.com/wiki/Manual:Console. <br>
 
 Before sending out commands we must setup ssh to the router and send command using PC termianl instead of web based terminal <br>
-### setting up ssh with MicroTik
+### Setting up ssh with MicroTik
 1. Connect to the Microtik wifi
 2. go to the router IP using browser-192.168.88.1 
 3. click on WebFig tab located at top right of webpage.
 4. go to "System" and then "Users" found in the tab menue to the right
 5. Here you can add new user and set it's password.
-6. After setting up a user you can ssh as that user from the PC connected to Microtik wifi. for example i use the command below for user "loranet":<br>
+6. After setting up a user you can ssh as that user with it's password from the PC connected to Microtik wifi. for example i use the command below for user "loranet":<br>
 <code> ssh loranet@192.168.88.1 </code>
+
+### Configuring Frequency Plan
+To do this we need to change the radio specifications to our desired specs which is found in the [excel file!](https://github.com/Abdolraouf-KIE/MicroTik/blob/main/LORA%20Frequency%20Plan%202019%262020.xlsx).
+1. First we need to go to the "Lora" layer by command below:<br>
+<code>lora</code>
+2. To see the list of commands we can use in this layer use the code below:
+<code>?</code>
+This will print out all the commmands available, to know more about these commands go to https://wiki.mikrotik.com/wiki/Manual:Console. 
+3. We would like to see list of parameters so then we can change them. to see list of parameters use: <br>
+<code>print</code>
+e.g. output: <br>
+<code>Flags: X - disabled 
+ 0   name="gateway-0" status="Enabled" hardware-id="323531321C002F00" 
+     gateway-id="323531321C002F00" firmware-id="5c00745" servers=loranet 
+     channel-plan=as-923 antenna-gain=0dB forward=crc-valid,crc-error 
+     network=private lbt-enabled=no listen-time=5000us rssi-threshold=-65dBm 
+     band=902-928 locks=""</code>
+<br> 
+4. We would like to change the parameter "channel-plan" and set it to "custom". <br>
+<code>set channel-plan=custom</code><br>
+5. Select "Numbers" as 0 since the parameter is at columb 0-refer to preveious output.<br>
+<code>Numebrs: 0</code> <br>
+to see full list of values possible for a parameter you can double tab or use "?" after typing "set channel-plan="
+6. for AS1 as of 2020 we need to obtain the output below when we print paramters at "lora channels" layer
+<code>[loranet@MikroTik] /lora channels> print
+Flags: X - disabled 
+ #   NAME       TYPE RADIO    FREQ-OFF BANDW...   FREQ SP..   DATARATE
+ 0   gateway-0  MSF  radio0     200000 125_kHz   923.2
+ 1   gateway-0  MSF  radio0     400000 125_kHz   923.4
+ 2   gateway-0  MSF  radio1     200000 125_kHz   922.2
+ 3   gateway-0  MSF  radio1     400000 125_kHz   922.4
+ 4   gateway-0  MSF  radio0    -400000 125_kHz   922.6
+ 5   gateway-0  MSF  radio0    -200000 125_kHz   922.8
+ 6   gateway-0  MSF  radio0          0 125_kHz     923
+ 7   gateway-0  MSF  radio1          0 125_kHz     922
+ 8   gateway-0  LoRa radio1     100000 250_kHz   922.1 SF7 
+ 9   gateway-0  FSK  radio1    -200000 125_kHz   921.8           50000
+</code>
+7. To do this first you need to go to "lora/radios" layer and set the centeral frequency as given in excel after which set the radio, frequency-off, and bandwidth. you can set pramter of multiple columb by:<br>
+<code>set 0,1,2,3,4,5,6,7 bandwidth=125</code> <br>
 
 ## References 
 ### command line references: <br>

@@ -7,7 +7,7 @@ The quick setup below is according to https://help.mikrotik.com/docs/display/UM/
 
 1. Make sure your ISP is allowing hardware change and will issue an automatic IP address. #This is to allow the router to be connected to internet. forget this for now, further information will be given at step 12
 2. Open the bottom lid. 
-3. Connect an external antenna to the SMA connector. #alternativly you can use the PCB antenna by the sid of the box
+3. Connect an external antenna to the SMA connector. #alternativly you can use the PCB antenna by the side of the box
 4. Connect the device to the power source. 
 5. Connect with your device to the MikroTik wireless network #for me it took a while for the wifi ssid to to showup, so after power up give it few minutes. Standard ssid of wifi is "MicroTkiXXX".
 6. The configuration has to be done through the wireless network using a web browser or mobile app. Alternatively, you can use the WinBox configuration tool https://mt.lv/winbox. By default, Ethernet port access is blocked by a firewall. #to configure i used the web brower, but the app provides a more intuitive and faster quick setup-for full configuration DONT use mobile.

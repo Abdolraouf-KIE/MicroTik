@@ -1,10 +1,10 @@
 # MicroTik
+![MicroTik Lora Kit](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
-# Quickstart 
+![MicroTik Lora Module](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+## Quickstart 
 The quick setup below is according to https://help.mikrotik.com/docs/display/UM/wAP+LR9+kit. Additional notes will be added after '#'. <br> <br>
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 1. Make sure your ISP is allowing hardware change and will issue an automatic IP address. #This is to allow the router to be connected to internet. forget this for now, further information will be given at step 12
 2. Open the bottom lid. 
@@ -23,7 +23,7 @@ The quick setup below is according to https://help.mikrotik.com/docs/display/UM/
 15. Set the router password. #Only important for security
 <br>
 
-# configuration(basic)
+## configuration(basic)
 This section refers to the configuration section from https://help.mikrotik.com/docs/display/UM/wAP+LR9+kit#heading-Configuration <br> <br>
 To set the configuration for LR please connect to the device and log in with your web browser or use a mobile application. Two easy steps to follow:<br>
 
@@ -49,7 +49,7 @@ To set the configuration for LR please connect to the device and log in with you
 6. Click OK to save.
 7. The configuration is done.
 
-# Advance Frequency Plan Configuration (for AS1 2020)
+## Advance Frequency Plan Configuration (for AS1 2020)
 This section refers to https://help.mikrotik.com/docs/display/ROS/General+Properties. For guidlines on how to use commands refer to https://wiki.mikrotik.com/wiki/Manual:Console. <br>
 
 Before sending out commands we must setup ssh to the router and send command using PC termianl instead of web based terminal <br>
@@ -62,7 +62,7 @@ Before sending out commands we must setup ssh to the router and send command usi
 6. After setting up a user you can ssh as that user from the PC connected to Microtik wifi. for example i use the command below for user "loranet":<br>
 <code> ssh loranet@192.168.88.1 </code>
 
-# References 
+## References 
 ### command line references: <br>
 1. https://wiki.mikrotik.com/wiki/Manual:Console <br>
 2. https://wiki.mikrotik.com/wiki/Manual:Interface/Lora#Channels <br>

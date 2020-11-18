@@ -1,3 +1,7 @@
+code {
+  display: block;
+  white-space: pre-wrap   
+}
 # MicroTik
 ![MicroTik Lora Kit](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
@@ -15,7 +19,7 @@ The quick setup below is according to https://help.mikrotik.com/docs/display/UM/
 7. Once connected to the wireless network, open https://192.168.88.1 in your web browser to start the configuration. #The URL didnt work for me and instead "192.168.88.1" worked for me.
 8. user name: admin and there is no password by default. #by defualt this credential is automaticlly keyed and you simply enter the front page
 9. When using a mobile application choose Quick setup and it will guide you through all necessary configuration in six easy steps. #Easy and quick setup with mobile, but it has limited ability (i didnt fully explore though)
-10. Find your LR Gateway ID on the label within the product and register it in your Network Server. #the label is at the back of kit given by "GW ID: 323XXXXXXXX"
+10. Find your LR Gateway ID on the label within the product and register it in your Network Server. #the label is at the back of kit given by "GW ID: 323XXXXXXXX" and this has to be added to the cloud.loranet.my for gateway information.
 11. To make the device connect to the LR Network Server. #To do this go to configure section after finishing this section
 12. Click the "Check for updates" button and update your RouterOS software to the latest version, the device needs to have an active Internet connection. #To allow the router to have internet, connet an ethernet cable to it. If router has internet the wifi provided by microtik also has internet.
 13. After update set your country, to apply country regulation settings. #This is just for wifi regulations
@@ -66,27 +70,27 @@ Before sending out commands we must setup ssh to the router and send command usi
 To do this we need to change the radio specifications to our desired specs which is found in the [excel file!](https://github.com/Abdolraouf-KIE/MicroTik/blob/main/LORA%20Frequency%20Plan%202019%262020.xlsx).
 1. First we need to go to the "Lora" layer by command below:<br>
 <code>lora</code>
-2. To see the list of commands we can use in this layer use the code below:
+2. To see the list of commands in this layer use the code below:
 <code>?</code>
 This will print out all the commmands available, to know more about these commands go to https://wiki.mikrotik.com/wiki/Manual:Console. 
 3. We would like to see list of parameters so then we can change them. to see list of parameters use: <br>
 <code>print</code>
-e.g. output: <br>
-<code>Flags: X - disabled 
+<br>e.g. output: <br>
+<pre><code>Flags: X - disabled 
  0   name="gateway-0" status="Enabled" hardware-id="323531321C002F00" 
      gateway-id="323531321C002F00" firmware-id="5c00745" servers=loranet 
      channel-plan=as-923 antenna-gain=0dB forward=crc-valid,crc-error 
      network=private lbt-enabled=no listen-time=5000us rssi-threshold=-65dBm 
-     band=902-928 locks=""</code>
+     band=902-928 locks=""</pre></code>
 <br> 
 4. We would like to change the parameter "channel-plan" and set it to "custom". <br>
 <code>set channel-plan=custom</code><br>
 5. Select "Numbers" as 0 since the parameter is at columb 0-refer to preveious output.<br>
 <code>Numebrs: 0</code> <br>
-to see full list of values possible for a parameter you can double tab or use "?" after typing "set channel-plan="
-6. for AS1 as of 2020 we need to obtain the output below when we print paramters at "lora channels" layer
-<code>[loranet@MikroTik] /lora channels> print
-Flags: X - disabled 
+* to see full list of values possible for a parameter you can double tab or use "?" after typing "set channel-plan=" <br>
+6. for AS1 as of 2020 we need to obtain the output below when we print paramters at "lora/channels" layer
+<pre><code>[loranet@MikroTik] /lora channels> print
+Flags: X - disabled
  #   NAME       TYPE RADIO    FREQ-OFF BANDW...   FREQ SP..   DATARATE
  0   gateway-0  MSF  radio0     200000 125_kHz   923.2
  1   gateway-0  MSF  radio0     400000 125_kHz   923.4
@@ -96,9 +100,9 @@ Flags: X - disabled
  5   gateway-0  MSF  radio0    -200000 125_kHz   922.8
  6   gateway-0  MSF  radio0          0 125_kHz     923
  7   gateway-0  MSF  radio1          0 125_kHz     922
- 8   gateway-0  LoRa radio1     100000 250_kHz   922.1 SF7 
+ 8   gateway-0  LoRa radio1     100000 250_kHz   922.1 SF7
  9   gateway-0  FSK  radio1    -200000 125_kHz   921.8           50000
-</code>
+</pre></code>
 7. To do this first you need to go to "lora/radios" layer and set the centeral frequency as given in excel after which set the radio, frequency-off, and bandwidth. you can set pramter of multiple columb by:<br>
 <code>set 0,1,2,3,4,5,6,7 bandwidth=125</code> <br>
 
